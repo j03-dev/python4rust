@@ -18,16 +18,23 @@ impl Person {
         self.age
     }
 
-//     fn grow(&self) {
-//         self.age += 1
-//     }
+    fn grow(&self) {
+        self.age += 1
+    }
+
+    // fn grow(&mut self) {
+    //     self.age += 1
+    // }
 }
 
 fn main() {
     let person = Person::new("FITAHIANA", "Nomeniavo", 22);
     println!("{person:?}");
 
-//     person.grow();
-// 
-//     println!("{person:?}");
+    // let mut person = Person::new("FITAHIANA", "Nomeniavo", 22);
+    // println!("{person:?}");
+
+    // person.grow();
+
+    // println!("{person:?}");
 }

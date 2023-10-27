@@ -1,59 +1,111 @@
-## _Différence de Rust avec Python_
+# Différence de Rust par rapport à Python
 
-### Exemple 1 : Gestion de la mémoire
+Ce document vise à expliquer les principales différences entre Rust et Python, en mettant l'accent sur ce que les développeurs Python doivent savoir lorsqu'ils envisagent de se familiariser avec Rust.
+
+## 1. Performance
+
+Rust est un langage de programmation à la mémoire sécurisée qui offre des performances bien meilleures que Python, qui est interprété. Rust permet un contrôle précis sur la gestion de la mémoire et n'a pas de coûts d'overhead liés à l'interprétation. Si vous travaillez sur des applications nécessitant des performances élevées, Rust peut être un meilleur choix.
+
+## 2. Sûreté
+
+Rust est réputé pour sa sûreté. Il empêche les erreurs de mémoire courantes telles que les pointeurs nuls, les courses de données et les fuites de mémoire grâce à son système de propriété. Python n'offre pas le même niveau de sécurité en ce qui concerne la gestion de la mémoire.
+
+## 3. Typage statique
+
+Rust est un langage à typage statique, ce qui signifie que les types des variables sont vérifiés à la compilation. Python, en revanche, est à typage dynamique. Cela signifie que Rust peut détecter davantage d'erreurs à un stade précoce, tandis que Python peut rencontrer des erreurs de type à l'exécution.
+
+## 4. Écosystème
+
+Python a un écosystème très riche avec de nombreuses bibliothèques et frameworks pour diverses tâches. Rust a également un écosystème en croissance rapide, mais il peut ne pas offrir autant de choix que Python. Cependant, Rust peut facilement intégrer du code écrit dans d'autres langages, y compris Python, grâce à des API C étrangères.
+
+## 5. Courbe d'apprentissage
+
+Rust peut être plus difficile à apprendre pour les développeurs Python en raison de sa syntaxe et de son système de propriété. Cependant, une fois que vous avez acquis de l'expérience avec Rust, vous apprécierez ses avantages en matière de performance et de sécurité.
+
+## 6. Cas d'utilisation
+
+Rust est idéal pour les applications nécessitant une haute performance, une sécurité rigoureuse et un contrôle sur la mémoire. Python, en revanche, est plus adapté aux tâches de scripting, au développement web rapide et à l'analyse de données.
+
+### 1. Affichage de "Hello, World!"
 
 **Rust :**
 ```rust
 fn main() {
-    let x = 5;  // Variable avec une valeur entière
-    let y = &x; // Référence à la variable x
-
-    println!("x : {}", x);
-    println!("y : {}", y);
+    println!("Hello, World!");
 }
 ```
 
 **Python :**
 ```python
 def main():
-    x = 5  # Variable avec une valeur entière
-    y = x   # y fait une copie de la valeur de x
+    print("Hello, World!")
+
+if __name__ == "__main__":
+    main()
+```
+
+L'affichage de "Hello, World!" est similaire dans les deux langages.
+
+### 2. Déclaration de variables
+
+**Rust :**
+```rust
+fn main() {
+    let x = 42; // Déclaration d'une variable immuable (par défaut)
+    let mut y = 7; // Déclaration d'une variable mutable avec 'mut'
+
+    println!("x : {}", x);
+    println!("y : {}", y);
+
+    y = 14; // Modification de la variable mutable y
+    println!("y (modifié) : {}", y);
+}
+```
+
+**Python :**
+```python
+def main():
+    x = 42 # Déclaration d'une variable
+    y = 7
 
     print("x :", x)
     print("y :", y)
 
+    # En Python, les variables sont par défaut mutables
+
 if __name__ == "__main__":
     main()
 ```
 
-En Rust, la variable `y` est une référence à la variable `x`. En Python, `y` contient une copie de la valeur de `x`. Cela montre comment Rust permet un contrôle plus précis sur la gestion de la mémoire.
+En Rust, vous devez spécifier `mut` pour déclarer une variable comme mutable. En Python, les variables sont par défaut mutables.
 
-### Exemple 2 : Typage statique
+
+### 3. Propriété (Ownership) et Emprunt (Borrowing)
 
 **Rust :**
 ```rust
 fn main() {
-    let x: i32 = 5;
-    let y: f64 = 5.0;
-
-    let sum = x + y; // Erreur de compilation : types incompatibles
+    let s1 = String::from("Hello"); // Création d'une chaîne de caractères
+    let s2 = s1; // La propriété de la chaîne s1 est transférée à s2 (ownership)
+    
+    // La ligne suivante générerait une erreur car s1 ne peut plus être utilisé
+    // println!("s1 : {}", s1); 
+    
+    println!("s2 : {}", s2); // s2 détient maintenant la propriété de la chaîne
 }
 ```
 
 **Python :**
 ```python
 def main():
-    x = 5
-    y = 5.0
+    s1 = "Hello" # Création d'une chaîne de caractères (str)
+    s2 = s1 # s2 pointe vers la même chaîne que s1 (pas de transfert de propriété)
 
-    sum = x + y  # Aucune erreur à la compilation, mais une erreur de type pourrait se produire à l'exécution
+    print("s1 :", s1) # s1 et s2 partagent la même chaîne
+    print("s2 :", s2)
 
 if __name__ == "__main__":
     main()
 ```
 
-En Rust, le mélange de types incompatibles (entier et flottant) génère une erreur de compilation. En Python, le mélange de types est autorisé, mais cela pourrait entraîner des erreurs à l'exécution.
-
-Ces exemples mettent en évidence les différences dans la gestion de la mémoire et le typage statique entre Rust et Python. Rust offre une plus grande sécurité et des erreurs détectées à la compilation, tandis que Python est plus permissif mais peut avoir des erreurs de type à l'exécution.
-
-### [< Précédent](./5-build_in.md)
+En Rust, le concept d'ownership signifie qu'une variable détient la propriété de la valeur, et la propriété peut être transférée à une autre variable. En Python, les variables font souvent référence aux mêmes objets, et il n'y a pas de notion explicite de propriété. Python utilise la gestion automatique de la mémoire (garbage collector) pour gérer la durée de vie des objets.

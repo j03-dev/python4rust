@@ -10,6 +10,9 @@ guides pour démarrer.
 - [Leptos](https://leptos.dev/)
 - [Yew](https://yew.rs/)
 
-### Réseau
+### Application Web
+- [Rocket](https://rocket.rs/)
+- [Actix](https://actix.rs/)
+- [Axum](https://docs.rs/axum/latest/axum/)
 
 ### [< Précédent](./4-whyRust.md) [Suivant >](./6-Diff_rust_Python.md)

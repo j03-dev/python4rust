@@ -4,6 +4,6 @@ fn introduce(name: String) {
 
 fn main() {
     let name: String = "Joe".to_string();
-    introduce(name); // owner 
-//     introduce(name);
+    introduce(name); // owner
+    // introduce(name);
 }
