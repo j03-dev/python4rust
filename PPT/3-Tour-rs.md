@@ -6,4 +6,4 @@ Connaissez-vous deja **Rust** :
 - [DocsRust](https://learnxinyminutes.com/docs/rust)
 - [RustByExample](https://doc.rust-lang.org/stable/rust-by-example/)
 
-### [Suivant >](./whyRust.md)
+### [< Précédent](./2-Installation.md) [Suivant >](./4-whyRust.md)

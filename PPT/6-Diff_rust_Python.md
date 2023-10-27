@@ -55,3 +55,5 @@ if __name__ == "__main__":
 En Rust, le mélange de types incompatibles (entier et flottant) génère une erreur de compilation. En Python, le mélange de types est autorisé, mais cela pourrait entraîner des erreurs à l'exécution.
 
 Ces exemples mettent en évidence les différences dans la gestion de la mémoire et le typage statique entre Rust et Python. Rust offre une plus grande sécurité et des erreurs détectées à la compilation, tandis que Python est plus permissif mais peut avoir des erreurs de type à l'exécution.
+
+### [< Précédent](./5-build_in.md)
