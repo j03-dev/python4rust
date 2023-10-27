@@ -1,0 +1,9 @@
+# Rust For Python Dev
+
+## Rust, qu'est-ce que c'est ?
+Rust est un langage de programmation compilé multi-paradigme conçu et développé par Mozilla Research depuis 2010. Il a
+été conçu pour être « un langage fiable, concurrent, pratique », supportant les styles de programmation purement
+fonctionnel, modèle d'acteur, procédural, ainsi qu'orienté objet sous certain aspect.
+[Wikipédia](https://fr.wikipedia.org/wiki/Rust_(langage))
+
+### [Suivant >](./Installation.md)
