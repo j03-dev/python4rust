@@ -15,4 +15,4 @@ guides pour démarrer.
 - [Actix](https://actix.rs/)
 - [Axum](https://docs.rs/axum/latest/axum/)
 
-### [< Précédent](./4-whyRust.md) [Suivant >](./6-Diff_rust_Python.md)
+### [< Précédent](./3-HowToUse.md) [Suivant >](./5-RustVsPython.md)

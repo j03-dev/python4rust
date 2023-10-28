@@ -17,4 +17,4 @@
   de premier ordre : un gestionnaire de paquets intégré et un outil de construction, un support intelligent
   multi-éditeur avec autocomplétion et inspections de type, un formateur automatique, et bien plus encore.
 
-### [< Précédent](./3-Tour-rs.md) [Suivant >](./5-build_in.md)
+### [< Précédent](./0-A.md) [Suivant >](./2.HowToInstall.md)
